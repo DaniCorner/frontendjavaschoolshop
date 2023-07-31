@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <h1>Order List</h1>
+  <table class="table table-striped custom-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tracking Number</th>
+        <th>Total quantity</th>
+        <th>Total price</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.orderTrackingNumber }}</td>
+        <td>{{ order.totalQuantity }}</td>
+        <td>{{ order.totalPrice }}</td>
+        <td [ngClass]="getStatusClass(order.status)">{{ order.status }}</td>
+        <td>
+          <div *ngIf="order.status !== 'Completed'" class="action-container">
+            <select [(ngModel)]="order.newStatus" class="form-control custom-select">
+              <option value="Not Shipped" style="color:red">Not Shipped</option>
+              <option value="Shipped" style="color:green">Shipped</option>
+            </select>
+            <button class="btn btn-primary custom-button" (click)="updateOrderStatus(order.id, order.newStatus)">Update</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

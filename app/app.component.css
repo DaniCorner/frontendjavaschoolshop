@@ -1,0 +1,45 @@
+.example-spacer{
+    flex: 1 1 auto;
+  }
+  
+  a {
+    color:aliceblue;
+  }
+
+  a.logout-link {
+    color: #FF5252; /* Reddish tone */
+    font-weight: bold;
+  }
+  
+  a.login-link {
+    color: #FFD700; /* Gold */
+    font-weight: bold;
+  }
+  
+  a.signup-link {
+    color: #00FFFF; /* Cyan */
+    font-weight: bold;
+  }
+  
+  button.user-button {
+    color: #00FF00; /* Bright Green */
+    font-weight: bold;
+  }
+  
+
+  app-search {
+    margin-right: 15px;
+
+  }
+
+
+  /*PROFIEL IMAGE*/
+
+  .profile-image-header {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    object-fit: cover;
+  }

@@ -1,0 +1,62 @@
+<br>
+<br>
+<router-outlet></router-outlet>
+<div class="main-content">
+  <div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row mt-20">
+        <div class="col-md-6 offset-md-3">
+          <div class="container text-center">
+            <img src="../../../assets/icon.jpg" width="100" height="100">
+          </div>
+
+          <h1 class="text-center">Register Here</h1>
+
+          <form [formGroup]="userForm" (ngSubmit)="formSubmit()">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input formControlName="username" id="username" class="form-control" placeholder="Enter your username">
+              <small class="form-text text-muted">The username must be unique.</small>
+            </div>
+          
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input formControlName="password" id="password" type="password" class="form-control" placeholder="Enter your password">
+            </div>
+          
+            <div class="form-group">
+              <label for="nombre">First Name</label>
+              <input formControlName="nombre" id="nombre" class="form-control" placeholder="Enter your first name">
+            </div>
+          
+            <div class="form-group">
+              <label for="apellido">Last Name</label>
+              <input formControlName="apellido" id="apellido" class="form-control" placeholder="Enter your last name">
+            </div>
+          
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input formControlName="email" id="email" type="email" class="form-control" placeholder="Enter your email">
+              <div *ngIf="userForm.controls['email'].errors?.['required']" class="text-danger">Email is required.</div>
+              <div *ngIf="userForm.controls['email'].errors?.['email']" class="text-danger">Invalid email format.</div>
+            </div>
+          
+            <div class="form-group">
+              <label for="telefono">Date of Birth</label>
+              <input formControlName="telefono" id="telefono" class="form-control" placeholder="Enter your birthdate">
+            </div>
+          
+            <br>
+            <div class="container text-center">
+              <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Register</button>
+              <button type="reset" style="margin-left: 20px;" class="btn btn-secondary">Clear</button>
+            </div>
+          </form>        
+          
+
+          <br><br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

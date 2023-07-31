@@ -1,0 +1,61 @@
+
+<br>
+<br>
+<br>
+<br>
+<h1 style="color: white; text-align:center" >Top 10 Best Sellers Movies</h1>
+
+<div class="row">
+  <div class="col-md-3" *ngFor="let productQuantity of productQuantities | slice:0:10; let index = index">
+    <div class="card">
+      <img [src]="productQuantity.imageUrl" class="card-img-top" alt="Product Image">
+      <div class="card-body">
+        <h5 class="card-title">Product ID: {{ productQuantity.productId }}</h5>
+        <p class="card-text">Quantity: {{ productQuantity.totalQuantity }}</p>
+        <i class="fa-solid fa-medal fa-2xl" style="color: #eede2f;" aria-hidden="true" *ngIf="index===0"></i>
+        <i class="fa-solid fa-medal fa-xl" style="color: #65655f;" aria-hidden="true" *ngIf="index===1"></i>
+        <i class="fa-solid fa-medal fa-lg" style="color: #e8850c;" aria-hidden="true" *ngIf="index===2"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="container">
+    <h1 class="mb-4 address-title" style="color: white">Shipping Statistics</h1>  
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor="let addressCount of addressCounts" class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Country: {{ addressCount.country }}</h5>
+            <p class="card-text">Count: {{ addressCount.countryCount }}</p>
+            <img *ngIf="addressCount.country === 'Spain'" src="../../../../assets/ES.png" alt="Spain Icon" class="country-icon">
+            <img *ngIf="addressCount.country === 'Russia'" src="../../../../assets/RU.png" alt="Russia Icon" class="country-icon">
+            <img *ngIf="addressCount.country === 'Germany'" src="../../../../assets/DE.png" alt="Germany Icon" class="country-icon">
+            <img *ngIf="addressCount.country === 'Mexico'" src="../../../../assets/MX.png" alt="Mexico Icon" class="country-icon">
+            <img *ngIf="addressCount.country === 'United States'" src="../../../../assets/US.png" alt="United States Icon" class="country-icon">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div *ngIf="revenueStats">
+          <h1 lass="mb-4 address-title" style="color: white">Revenue Stats</h1>
+          <div class="row">
+          <ul>
+            <li *ngFor="let stat of revenueStats; let index = index" class="card mb-4">
+              <div class="card-body">
+                <i class="fa-solid fa-money-bill-1-wave fa-xl" style="color: #71bc49" aria-hidden="true" *ngIf="index===0"></i>
+                <i class="fa-solid fa-money-bill-trend-up fa-2xl" style="color: #71bc49" aria-hidden="true" *ngIf="index===1"></i>
+                <h5 style="margin-top: 8px;" class="card-title">{{ stat[0] }}</h5>
+                <p class="card-text">Total Sum: {{ stat[1] }} $</p>
+            </div>
+            </li>
+          </ul>
+        </div> 
+      </div>
+    </div>  
+    </div>
+  </div>
+  
+  
+  

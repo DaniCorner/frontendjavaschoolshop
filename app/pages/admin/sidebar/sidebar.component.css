@@ -1,0 +1,41 @@
+.card {
+  background-color: #222222;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.card-header {
+  background-color: #6b6c6c;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 24px;
+  color:white;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.list-group {
+  margin: 0;
+  padding: 0;
+}
+
+.list-group-item {
+  background-color: #222222;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+}
+
+.list-group-item:hover {
+  background-color: #6b6c6c;
+}

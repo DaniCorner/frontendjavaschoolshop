@@ -1,0 +1,138 @@
+<div class="main-content">
+  <br>
+  <br>
+<div class="main-section">
+    <h1>Project Overview</h1>
+    <p>My project is about creating a web page that acts like an <strong>online movie store</strong>. It allowed me to list and categorize all the movies I've watched in my life. The movies are stored and organized in a MySQL database.</p>
+    <p>For this project, I used <span style="color: rgb(0, 132, 255); font-weight: bold;">MySQL Workbench</span> for managing the database, <span style="color: green; font-weight: bold;">Spring Boot</span> for the backend, and <span style="color: red; font-weight: bold;">Angular</span> for the frontend.</p>  
+    <div class="image-container">
+      <img src="../../../assets/mysql.png" alt="Image" width="205px">
+    <img src="../../../assets/spring.png" alt="Image" width="205px">
+    <img src="../../../assets/angular.jpg" alt="Image" width="205px">
+    </div>
+    <p>The target audience for this project is movie lovers who want a platform to showcase and manage their movie preferences. Users can browse the movie collection, search for titles, and get more details about each film. They can also, as Admins, add, edit, and delete movies from the database.</p>
+    <p>My main goal is to meet all the requirements specified by the Java School. By completing these objectives, I want to demonstrate my skills in full-stack development, including frontend, backend, and database management.</p>
+    <p>I think I've met the Java School's requirements delivering an enjoyable user experience for cinephiles and movie enthusiasts.</p>
+    </div>
+
+    <hr>
+
+
+  <div class="container">
+  <div class="section">
+    <h2>Database Integration</h2>
+    <br>
+    <p>I integrated the MySQL database into my project using Spring Data JPA, which simplifies the mapping between entities and the database.</p>
+    <p>Some of the entities included are Product, ProductCategory, Order, OrderItems, Customer, and User. User entities have assigned Roles.</p>
+    <p>Relationships between entities were made, such as the one-to-many relationship between ProductCategory and Product, using foreign keys.</p>
+    <p>Using Spring Data JPA, I defined the entity classes with annotations like @Entity, @Table, @OneToMany, @ManyToOne, etc.</p>
+  </div>
+  <div class="section">
+    <h2>Technologies & Frameworks</h2>
+    <br>
+    <p>The frontend components, such as templates, stylesheets, and TypeScript files, are organized following Angular's component-based architecture.</p>
+    <p>On the backend, Spring Boot provides the server-side logic and API endpoints. MySQL Workbench is the database management system used. Entities representing movies are mapped to database tables using Spring Data JPA.</p>
+    <p>Unit tests are implemented using Mockito. Postman is used for testing and validating the API endpoints during development. IntelliJ and Visual Studio Code are used as IDEs.</p>
+      </div>
+  <img src="../../../assets/buster.jpg" alt="Image">
+  </div>
+  <div class="container">
+  <div class="section">
+    <h2>UI Design</h2>
+    <br>
+    <p>For the User Interface of my project, I designed it to be user-friendly and visually appealing. I incorporated Bootstrap and also I made use of various Angular Material components.</p>
+    <p>I implemented form controls with validation messages to guide users and prevent errors. The application responds promptly to user actions, providing feedback and loading indicators.</p>
+  </div> 
+  <div class="section">
+    <h2>Future enhancements</h2>
+    <br>
+    <p>User Reviews. Wishlist. Social Media Integration. Enhance the search functionality by adding advanced filters such as genre, language, release date, and actor/actress. Recommendations that analyze user preferences, purchase history, and ratings. User Interactions such as movie discussions. Mobile Application. Multiple Language Support.</p>
+  </div>
+   
+</div>
+  <div class="container">
+    <img src="../../../assets/piAro.jpg" alt="Image">
+    <div class="section">
+      <h2>DAO Layer</h2>
+      <br>
+      <p>To interact with the database, I implemented the Data Access Object. They can encapsulating the logic for CRUD operations (Create, Read, Update, Delete). JPA provides a set of default CRUD methods, written in SQL.</p>
+    </div>
+    <div class="section">
+      <h2>Exception Handling</h2>
+      <br>
+    <p>In my project, I used try-catch blocks in appropriate places within the code. I also made use of custom exception classes to encapsulate specific types of errors and provide more detailed information about the exception.</p>
+  </div>
+    
+  </div>
+  <div class="section">
+    <h2>Killer Features</h2>
+    <br>
+    <p>The killer features of the program are: access to <strong>movie details</strong>, access to interesting <strong>statistics</strong>, a <strong>payment method</strong> that matches shipping with the bidding address, and the star killer feature: the <strong>Movie Recommender</strong>.
+    </p>
+  </div>
+
+  <table>
+    <tr>
+      <th></th>
+      <th>Modify/Delete Movies</th>
+      <th>Add/Delete Categories</th>
+      <th>Change Order Status</th>
+      <th>All Orders List</th>
+      <th>Statistics</th>
+      <th>Login and Modify Profile</th>
+      <th>Purchase Movies</th>
+      <th>Access Discounts</th>
+      <th>Access Purchases by Order</th>
+      <th>Access Purchases by User</th>
+      <th>Access Movie Recommender</th>
+      <th>View Movie List and Details</th>      
+    </tr>
+    <tr>
+      <td>Admin</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td></td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td>Guest</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>&#10004;</td>
+    </tr>
+  </table>
+<br>
+<br>
+</div>

@@ -1,0 +1,91 @@
+.main-content-user{
+  padding-top:95px;
+  min-height:100vh;
+  background: linear-gradient(to bottom, #262626 0%, #000000 100%);
+}
+
+.user-dashboard {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #000000;
+}
+
+.user-dashboard h2 {
+  color: #000000;
+}
+
+.user-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.user-form input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.user-form button {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #007bff; 
+}
+
+.btn-save:hover {
+  background-color: #0056b3; 
+}
+
+.btn-change {
+  background-color: #ff8c00;
+}
+
+.btn-change:hover {
+  background-color: #e66a00;
+}
+
+.user-form input[type="file"] {
+  display: none;
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  border-radius: 25px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-image:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9); 
+  cursor: pointer;
+
+}
+
+
+h2, p {
+  text-align: center;
+}
+

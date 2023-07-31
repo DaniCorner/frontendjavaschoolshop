@@ -1,0 +1,47 @@
+
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <ul class="category-list">
+      <li *ngFor="let tempProductCategory of productCategories">
+        <div class="category-item" *ngIf="!tempProductCategory.isEditing">
+          <a [routerLink]="'/category/' + tempProductCategory.id" routerLinkActive="active-link">
+            {{ tempProductCategory.categoryName }}
+          </a>
+          <button class="btn btn-sm btn-primary" (click)="tempProductCategory.isEditing = true">
+            Edit
+          </button>
+          <button class="btn btn-sm btn-danger" (click)="deleteCategory(tempProductCategory)">
+            Delete
+          </button>
+        </div>
+        <div class="category-item" *ngIf="tempProductCategory.isEditing">
+          <input type="text" [(ngModel)]="tempProductCategory.categoryName" name="categoryName" class="form-control">
+          <div class="button-container">
+            <button class="btn btn-sm btn-success" (click)="saveCategory(tempProductCategory)">Save</button>
+            <button class="btn btn-sm btn-secondary" (click)="tempProductCategory.isEditing = false">Cancel</button>
+          </div>
+        </div>
+      </li>
+      <br>
+  
+      <div class="add-category">
+        <div class="form-inline d-flex">
+          <input type="text" [(ngModel)]="newCategoryName" name="newCategoryName" class="form-control" placeholder="New Category">
+          <button class="btn btn-primary ml-2" (click)="addCategory()">Add Category</button>
+        </div>
+      </div>
+    </ul>
+  </div>
+  
+  <div class="col-md-6">
+    <br>
+    <br>
+    <br>
+    <div class="image-container">
+      <img src="../../../../assets/Category.jpg" alt="Image" class="img-fluid category-image">
+    </div>
+  </div>

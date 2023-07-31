@@ -1,0 +1,53 @@
+<aside class="menu-sidebar d-none d-lg-block">
+  <div class="logo">
+    <a routerLink="/products">
+      <img src="assets/images/logo.png" alt="danielCornerlogo" class="img-responsive">
+    </a>
+  </div>
+  <app-product-category-menu>
+    
+  </app-product-category-menu>
+</aside>
+<!-- END MENU SIDEBAR -->
+<router-outlet></router-outlet>
+<br>
+<br>
+<div class="main-content">
+  <div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row mt-20">
+        <div class="col-md-6 offset-md-3">
+          <div class="card">
+            <div class="container text-center">
+              <div class="image-container">
+                <img src="../../../assets/login.jpg" class="rounded-circle" width="100" height="100">
+              </div>
+            </div>
+
+            <h1 class="text-center">Login</h1>
+            <form (ngSubmit)="formSubmit()" class="full-width">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input [(ngModel)]="loginData.username" name="username" required class="form-control" id="username" placeholder="Enter your username">
+                <small class="form-text text-muted" [ngClass]="{ 'hidden': loginData.username }">The username must be valid.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input [(ngModel)]="loginData.password" name="password" required type="password" class="form-control" id="password" placeholder="Enter your password">
+                <small class="form-text text-muted" [ngClass]="{ 'hidden': loginData.password }">The password must be valid.</small>
+              </div>
+
+              <br><br>
+
+              <div class="container text-center">
+                <button type="submit" class="btn btn-primary">Log In</button>
+                <button type="reset" style="margin-left: 20px;" class="btn btn-secondary">Clear</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

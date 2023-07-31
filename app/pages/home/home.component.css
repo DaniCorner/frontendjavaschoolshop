@@ -1,0 +1,32 @@
+.main-content {
+    padding-top: 116px;
+    background: linear-gradient(to bottom, #262626 0%, #000000 100%);
+    min-height: 100vh; /* Ensure the content covers the full viewport height */
+    color:white;
+  }
+
+
+  i {
+    color:white;
+  }
+
+  #myImage {
+    width: 400px;
+    transition: filter 0.3s ease;
+  }
+
+  #myImage:hover {
+    filter: brightness(150%);
+  }
+
+  .col-md-4 {
+    transition: transform 0.3s ease; /* Add a smooth transition effect for transform property */
+  }
+
+  .col-md-4:hover {
+    transform: scale(1.1); /* Increase the size of the container on hover */
+  }
+
+  .col-md-4:hover i {
+    transform: scale(1.2); /* Increase the size of the icon on hover */
+  }

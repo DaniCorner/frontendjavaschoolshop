@@ -1,0 +1,35 @@
+<div class="main-content-user">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="user-dashboard">
+          <h2>Admin Panel</h2>
+              <div class="profile-image-container" (click)="changeImage()">
+                <img [src]="'../../../../assets/profiles/' + user.perfil" alt="Profile Image" class="profile-image">
+              </div>
+          <form class="user-form" (ngSubmit)="actualizarUsuario()">
+            <p>Username: {{ user.username }}</p>
+            <label>First Name:
+              <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control">
+            </label>            
+            <label>Last Name:
+              <input type="text" [(ngModel)]="user.apellido" name="apellido" class="form-control">
+            </label>
+            <label>Email:
+              <input type="email" [(ngModel)]="user.email" name="email" class="form-control">
+            </label>
+            <label>Date of Birth:
+              <input type="tel" [(ngModel)]="user.telefono" name="telefono" class="form-control">
+            </label>
+            <label>Password:
+              <input type="password" [(ngModel)]="user.password" name="contraseña" class="form-control">
+            </label>
+            <button type="submit" class="btn btn-primary btn-save">Save</button>
+            <button class="btn btn-primary btn-change" (click)="changeImage()">Change Image</button>
+            <input type="file" id="fileInput" style="display: none" (change)="onFileSelected($event)">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

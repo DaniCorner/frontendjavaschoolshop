@@ -1,0 +1,55 @@
+<div class="page-wrapper strange-layout">
+<!-- MENU SIDEBAR -->
+<aside class="menu-sidebar d-none d-lg-block">
+  <div class="logo">
+    <a routerLink="/home">
+      <img src="assets/images/logo.png" alt="danielCornerlogo" class="img-responsive">
+    </a>
+  </div>
+  <app-product-category-menu>
+    
+  </app-product-category-menu>
+</aside>
+<!-- END MENU SIDEBAR -->
+<router-outlet></router-outlet>
+  
+
+  <div class="page-container">
+    <!-- HEADER DESKTOP -->
+    <header class="header-desktop">
+      <div class="section-content section-content-p30">
+        <div class="container-fluid">
+          <div class="header-wrap">
+            <app-search></app-search>            
+            <app-cart-status></app-cart-status>
+              <span class="example-spacer"></span>
+              <a *ngIf = "!isLoggedIn" [routerLink]="'/login'" mat-icon-button class = "example-icon favorite-icon login-link"
+                aria-label = "Example icon-button with heart icon" style="margin-right: 50px"> Login </a>
+              <a *ngIf = "!isLoggedIn" [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr20 ml70 signup-link"
+                aria-label="Example icon-button with heart icon" > SignUp </a>
+              <a *ngIf = "isLoggedIn" (click) = "logout()" style="margin-right: 50px" mat-icon-button class="example-icon favorite-icon logout-link"
+                aria-label="Example icon-button with heart icon" > LogOut </a>
+              <button [routerLink]="'/admin'" *ngIf = "isLoggedIn && user" mat-button style="margin-right: 10px" class="example-icon favorite-icon user-button"
+                aria-label="Example icon-button with heart icon"> {{ user.username }} </button>
+                <div *ngIf="isLoggedIn" [routerLink]="'/user-dashboard'" class="profile-image-container">
+                  <img [src]="'../assets/profiles/' + user.perfil" class="profile-image-header">
+                </div>
+          </div>
+          <div class="account-wrap"></div>
+        </div>
+      </div>
+    </header>
+    <!-- END HEADER DESKTOP -->
+
+    <!-- MAIN CONTENT -->
+    <router-outlet></router-outlet>
+
+  </div>
+</div>
+
+<!-- ENDS PAGE CONTAINER -->
+<footer class="strange-footer">
+  <ul>
+    <li><a [routerLink]="'/info'">More Info</a></li>
+  </ul>
+</footer>

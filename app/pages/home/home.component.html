@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="jumbotron text-center text-white"> <!-- Added 'text-white' class -->
+    <h1 class="display-3"><small>Welcome </small><br> to the Movies Javashop</h1>
+    <p class="lead">Discover the world of cinema with us!</p>
+    <hr class="my-2">
+    <img id="myImage" [src]="randomImage" class="img-fluid rounded mx-auto d-block" alt="Home Image">
+    <br>
+    <p>This website is a personal collection of movies, carefully ranked from best to worst, including my all-time favorites. Users can also buy their own favorite movies. As a true movie enthusiast, I have created this space to share my love for the seventh art with other film lovers. Here you will find my preferences and a complete list of all the movies I have watched in my life. <br>Explore my collection and discover new movies to enjoy!</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="/products" role="button">Browse Movies</a>
+    </p>
+  </div>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div [routerLink]="'/products'" class="col-md-4 text-center mb-5">
+        <i class="fas fa-film fa-5x mb-3"></i>
+        <h4>1400 Movies</h4>
+        <p>Find information about the most popular movies and buy new masterpieces.</p>
+      </div>
+      <div [routerLink]="'/products/' + getRandomNumber()" class="col-md-4 text-center mb-5">
+        <i class="fas fa-newspaper fa-5x mb-3"></i>
+        <h4>Discoverings</h4>
+        <p>Explore our movie recommender for your releases and their rankings in shipping queues.</p>
+      </div>
+      <div  [routerLink]="'/user-dashboard'" class="col-md-4 text-center mb-5">
+        <i class="fas fa-comment fa-5x mb-3"></i>
+        <h4>Profile</h4>
+        <p>Modify your profile, leave your address and receive in your home your favorite movies.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+<br>
+</div>

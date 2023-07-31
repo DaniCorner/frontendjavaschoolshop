@@ -1,0 +1,104 @@
+.card {
+  background-color: #222222; 
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #ffffff; 
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #6b6c6c;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 32px; 
+  color:aliceblue;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-subtitle {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.ml-3 {
+  margin-left: 1.5rem;
+}
+
+h1 {
+  font-size: 28px; 
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  font-size: 20px; 
+  margin-bottom: 15px;
+}
+
+ul:before {
+  content: "Welcome, Admin! You have access to the following functions:";
+  display: block;
+  color: #aaaaaa; 
+  margin-bottom: 30px; 
+}
+
+li:before {
+  content: "\2022";
+  margin-right: 10px;
+  color: #6b6c6c;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover::before {
+  opacity: 1;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.1); 
+}
+
+li:hover {
+  background-color: #555555; 
+  color: #ffffff; 
+  cursor: pointer; 
+}

@@ -1,0 +1,124 @@
+<div class="main-content-user">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="user-dashboard">
+          <h2>User Panel</h2>
+              <div class="profile-image-container" (click)="changeImage()">
+                <img [src]="'../../../../assets/profiles/' + user.perfil" alt="Profile Image" class="profile-image">
+              </div>
+          <form class="user-form" (ngSubmit)="actualizarUsuario()">
+            <p>Username: {{ user.username }}</p>
+            <label>First Name:
+              <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control">
+            </label>            
+            <label>Last Name:
+              <input type="text" [(ngModel)]="user.apellido" name="apellido" class="form-control">
+            </label>
+            <label>Email:
+              <input type="email" [(ngModel)]="user.email" name="email" class="form-control">
+            </label>
+            <label>Date of Birth:
+              <input type="tel" [(ngModel)]="user.telefono" name="telefono" class="form-control">
+            </label>
+            <label>Password:
+              <input type="password" [(ngModel)]="user.password" name="contraseña" class="form-control">
+            </label>
+            <button type="submit" class="btn btn-primary btn-save">Save</button>
+            <button class="btn btn-primary btn-change" (click)="changeImage()">Change Image</button>
+            <input type="file" id="fileInput" style="display: none" (change)="onFileSelected($event)">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ <br>
+ <br>
+
+  <div *ngIf="orderItems.length > 0">
+    <h2 class="orders-title">Items Ordered</h2>
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Tracking Number</th>
+          <th>Product ID</th>
+          <th>Image URL</th>
+          <th>Total Quantity</th>
+          <th>Order Id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let orderItem of orderItems" class="order-row">
+          <td>{{ orderItem.order.orderTrackingNumber }}</td>
+          <td>{{ orderItem.productId }}</td>
+          <td><img [src]="orderItem.imageUrl" alt="Product Image" width="50" height="50"></td>
+          <td>{{ orderItem.quantity }}</td>
+          <td>{{ orderItem.order.id }}</td>               
+         </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+
+  <div *ngIf="orderItems.length > 0">
+    <h2 class="orders-title">Your Orders</h2>
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Tracking Number</th>
+          <th>Total Quantity</th>
+          <th>Total Price</th>
+          <th>Status</th>
+          <th>Street</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Country</th>
+          <th>Zip Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let orderItem of orderItems; let i = index">
+          <tr *ngIf="i === 0 || !isSameAsPrevious(orderItem, orderItems[i - 1])" class="order-row">
+            <td >{{ orderItem.order?.orderTrackingNumber }}</td>
+            <td>{{ orderItem.order?.totalQuantity }}</td>
+            <td>{{ orderItem.order?.totalPrice }}</td>
+            <td [ngClass]="{
+            'shipped': orderItem.order?.status === 'Shipped',
+            'not-shipped': orderItem.order?.status === 'Not Shipped'
+            }">{{ orderItem.order?.status }}</td>
+            <td>{{ orderItem.order?.shippingAddress?.street }}</td>
+            <td>{{ orderItem.order?.shippingAddress?.city }}</td>
+            <td>{{ orderItem.order?.shippingAddress?.state }}</td>
+            <td *ngIf="orderItem.order?.shippingAddress?.country === 'Spain'">
+              <img src="../../../../assets/ES.png" alt="Spain Icon" class="country-icon">
+            </td>
+            <td *ngIf="orderItem.order?.shippingAddress?.country === 'Russia'">
+              <img src="../../../../assets/RS.png" alt="Russia Icon" class="country-icon">
+            </td>
+            <td *ngIf="orderItem.order?.shippingAddress?.country === 'Germany'">
+              <img src="../../../../assets/DE.png" alt="Germany Icon" class="country-icon">
+            </td>
+            <td *ngIf="orderItem.order?.shippingAddress?.country === 'Mexico'">
+              <img src="../../../../assets/MX.png" alt="Mexico Icon" class="country-icon">
+            </td>
+            <td *ngIf="orderItem.order?.shippingAddress?.country === 'United States'">
+              <img src="../../../../assets/US.png" alt="United States Icon" class="country-icon">
+            </td>
+                        <td>{{ orderItem.order?.shippingAddress?.zipCode }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="orderItems.length === 0">
+    <p class="no-order">No order items found.</p>
+  </div>
+
+  <br>
+  <br>
+
+
+</div>

@@ -1,0 +1,144 @@
+
+<br>
+<br>
+<br>
+<br>
+<div class="search-bar">
+  <div class="input-group">
+    <input type="text" [(ngModel)]="searchKeyword" name="searchKeyword" class="form-control" placeholder="Search Product">
+    <button class="btn btn-primary" (click)="searchProducts()">Search</button>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Parameters</th>
+      <th>Image URL</th>
+      <th>Price</th>
+      <!--<th>Category</th>-->
+      <th>Stock</th>
+      <th>Weight</th>
+      <th>Volume</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>
+        <div class="title" *ngIf="!product.isEditing">{{ product.title }}</div>
+        <input type="text" [(ngModel)]="product.title" name="title" class="form-control" *ngIf="product.isEditing">
+      </td>
+      <td>
+        <div class="parameters" *ngIf="!product.isEditing">{{ product.parameters }}</div>
+        <input type="text" [(ngModel)]="product.parameters" name="parameters" class="form-control" *ngIf="product.isEditing">
+      </td>
+      <td>
+        <div class="image-url" *ngIf="!product.isEditing">{{ product.imageURL }}</div>
+        <input type="text" [(ngModel)]="product.imageURL" name="imageURL" class="form-control" *ngIf="product.isEditing">
+      </td>
+      <td>
+        <ng-container *ngIf="!product.isEditing">{{ product.price }}</ng-container>
+        <ng-container *ngIf="product.isEditing">
+          <input type="number" [(ngModel)]="product.price" name="price" class="form-control">
+        </ng-container>
+      </td>
+       <!--<td>
+        <ng-container *ngIf="!product.isEditing">{{ product.categoryId }}</ng-container>
+        <ng-container *ngIf="product.isEditing">
+          <input type="number" [(ngModel)]="product.categoryId" name="categoryId" class="form-control">
+        </ng-container>
+      </td>-->
+      <td>
+        <ng-container *ngIf="!product.isEditing">{{ product.quantityInStock }}</ng-container>
+        <ng-container *ngIf="product.isEditing">
+          <input type="number" [(ngModel)]="product.quantityInStock" name="quantityInStock" class="form-control">
+        </ng-container>
+      </td>
+      <td>
+        <ng-container *ngIf="!product.isEditing">{{ product.weight }}</ng-container>
+        <ng-container *ngIf="product.isEditing">
+          <input type="number" [(ngModel)]="product.weight" name="weight" class="form-control">
+        </ng-container>
+      </td>
+      <td>
+        <ng-container *ngIf="!product.isEditing">{{ product.volume }}</ng-container>
+        <ng-container *ngIf="product.isEditing">
+          <input type="number" [(ngModel)]="product.volume" name="volume" class="form-control">
+        </ng-container>
+      </td>
+      <td>
+        <div *ngIf="!product.isEditing">
+          <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id)">
+            Delete
+          </button>
+          <button class="btn btn-sm btn-primary" (click)="product.isEditing = true">
+            Edit
+          </button>
+        </div>
+        <div *ngIf="product.isEditing">
+          <button class="btn btn-sm btn-success" (click)="updateProduct(product)">
+            Save
+          </button>
+          <button class="btn btn-sm btn-secondary" (click)="cancelEditing(product)">
+            Cancel
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="pagination">
+  <button class="btn btn-secondary" (click)="previousPage()">Previous</button>
+  <button class="btn btn-secondary" (click)="nextPage()">Next</button>
+</div>
+<br>
+
+<hr>
+
+<div class="alert alert-success" *ngIf="showProductAddedAlert">
+  New Product Added!
+</div>
+<form (ngSubmit)="onSubmit()" class="product-form">
+  <h2 class="label-white">Add New Product</h2>
+  <div class="form-group">
+    <label class="label-white">Title</label>
+    <input type="text" [(ngModel)]="product.title" name="title" class="form-control input-black" required>
+  </div>
+  <div class="form-group">
+    <label class="label-white">Parameters</label>
+    <input type="text" [(ngModel)]="product.parameters" name="parameters" class="form-control input-black" required>
+  </div>
+  <div class="form-group">
+    <label class="label-white">Image URL</label>
+    <input type="text" [(ngModel)]="product.imageURL" name="imageURL" class="form-control input-black" required>
+  </div>
+  <div class="form-group">
+    <label class="label-white">Price</label>
+    <input type="number" [(ngModel)]="product.price" name="price" class="form-control input-black" required>
+  </div>
+  <div class="form-group">
+    <label class="label-white">Category</label>
+    <input type="number" [(ngModel)]="product.categoryId" name="categoryId" class="form-control input-black" required>
+  </div>
+  <div class="form-group">
+    <label class="label-white">Stock</label>
+    <input type="number" [(ngModel)]="product.quantityInStock" name="quantityInStock" class="form-control input-black" required>
+  </div>
+  <div class="form-group">
+    <label class="label-white">Weight</label>
+    <input type="number" [(ngModel)]="product.weight" name="weight" class="form-control input-black" required>
+  </div>
+  <div class="form-group">
+    <label class="label-white">Volume</label>
+    <input type="number" [(ngModel)]="product.volume" name="volume" class="form-control input-black" required>
+  </div>
+  <br>
+  <button class="btn btn-success">Add Product</button>
+  <br>
+</form>
+<br>
+

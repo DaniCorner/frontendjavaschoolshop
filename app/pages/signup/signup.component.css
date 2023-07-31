@@ -1,0 +1,26 @@
+.container.text-center {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .container.text-center::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+  
+  .container.text-center img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
