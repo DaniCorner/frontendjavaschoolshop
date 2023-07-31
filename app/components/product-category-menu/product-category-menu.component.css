@@ -1,0 +1,33 @@
+.menu-sidebar-content {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  
+  .navbar-sidebar {
+    font-size: 16px;
+  }
+  
+  .punk-rock-color {
+    color: white;
+  }
+  
+  .punk-rock-color li {
+    margin-bottom: 10px;
+  }
+  
+  .punk-rock-color a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .punk-rock-color a:hover {
+    color: red;
+  }
+  
+  .active-link {
+    font-weight: bold;
+  }
+  

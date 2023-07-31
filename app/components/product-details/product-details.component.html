@@ -1,0 +1,33 @@
+<div class="detail-section">
+  <img src="{{ product.imageURL }}" class="detail-img">
+  <div class="detail-content">
+    <h3 class="title-detail">{{ product.title }}</h3>
+    <div class="price">{{ product.price | currency:'USD' }}</div>
+    <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+    <hr>
+    <h4>Description</h4>
+    <div class="description">
+      <p>{{ product.parameters }}</p>
+    </div>
+    <h4>You Might Also Like:</h4>
+    <br>
+    <div class="similar-movies-container">
+      <div *ngFor="let similarMovie of product.similarMovies" class="similar-movie">
+        <a [routerLink]="'/products/' + similarMovie.id">
+          <img [src]="similarMovie.imageURL" class="similar-movie-image">
+        </a>
+        <div class="similar-movie-title">{{ similarMovie.title }}</div>
+      </div>          
+    </div> 
+    <div class="inline-container">
+      <br>
+      <button (click)="reloadPage()"  class="btn btn-primary btn-sm">Reload Page</button>
+        <p>Didn't like the recommendations? Try again!</p>
+    </div>
+    <a routerLink="/products" class="mt-5 back-link">Back to Product List</a>
+    <br>
+<br>
+
+  </div>
+        
+</div>

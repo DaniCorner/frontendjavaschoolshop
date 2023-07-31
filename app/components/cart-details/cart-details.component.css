@@ -1,0 +1,121 @@
+.free-shipping {
+  color: green;
+}
+
+.regular-shipping {
+  color: red;
+}
+
+.main-content {
+  background: linear-gradient(to bottom, #262626 0%, #000000 100%);
+  color: white;
+  padding: 30px;
+}
+
+table.table.table-bordered {
+  border: transparent;
+  background: #ffffff;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.table-bordered td,
+.table-bordered th {
+  border: transparent;
+  padding: 10px;
+}
+
+table.table.table-bordered th {
+  background: #2d2d2d;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  text-align: center;
+}
+
+table.table.table-bordered td {
+  font-size: 24px;
+  text-align: center;
+}
+
+.table-responsive {
+  padding-right: 1px;
+}
+
+.items select {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  outline: 0;
+  margin-left: 5px;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+.btn-remove {
+  background-color: rgb(255, 91, 91);
+  border-color: rgb(255, 91, 91);
+  margin-top: 5px;
+}
+
+.btn-remove:hover {
+  background-color: #d13939;
+  border-color: #d13939;
+  margin-top: 5px;
+}
+
+.btn-checkout {
+  background-color: rgb(103, 103, 251);
+}
+
+.btn-checkout:hover {
+  background-color: #6b6bff;
+}
+
+.alert-warning {
+  background-color: #2d2d2d;
+  color: white;
+  border-color: #d8b700;
+  padding: 15px;
+  text-align: center;
+}
+
+.img-responsive {
+  border-radius: 25px;
+  margin-left: 20px;
+}
+
+.row.no-gutters {
+  align-items: center;
+}
+
+.main-content table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.main-content table tbody tr:hover td {
+  font-weight: bold;
+}
+
+.main-content table tbody tr:hover img {
+  transform: scale(1.1);
+}
+
+.main-content table tbody tr:hover .btn-remove {
+  background-color: #f26666;
+}
+
+.main-content table tbody tr:hover .btn-checkout {
+  background-color: #66b3ff;
+}

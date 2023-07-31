@@ -1,0 +1,43 @@
+.similar-movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 20px;
+  }
+  
+  .similar-movie {
+    text-align: center;
+  }
+  
+  .similar-movie-image {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .similar-movie:hover .similar-movie-image {
+    transform: scale(1.05);
+  }
+  
+  .similar-movie-title {
+   font-size: 14px;
+   color: white;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width:120px;
+  }
+
+  .reload-container {
+    display: flex;
+    align-items: center;
+  }
+  
+
+  
+  .reload-container p {
+    margin-left: 10px;
+  }

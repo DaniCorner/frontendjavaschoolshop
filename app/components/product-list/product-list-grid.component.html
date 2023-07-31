@@ -1,0 +1,65 @@
+<!-- MENU SIDEBAR -->
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+      <a routerLink="/products">
+        <img src="assets/images/logo.png" alt="danielCornerlogo" class="img-responsive">
+      </a>
+    </div>
+    <app-product-category-menu>
+      
+    </app-product-category-menu>
+  </aside>
+  <!-- END MENU SIDEBAR -->
+  <router-outlet></router-outlet>
+  <div class="main-content">
+    <div class="section-content section-content-p30">
+      <h4>Movies available to Buy: {{ currentCategoryName }}</h4>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <ng-container *ngFor="let tempProduct of products">
+            <div class="col-md-3">
+              <div class="product-box">               
+                <a style="text-decoration-line:none" routerLink="/products/{{tempProduct.id}}">
+                  <img src="{{ tempProduct.imageURL }}" class="product-image">               
+                  <h1 class="product-title">{{ tempProduct.title }}</h1></a> 
+                        <div class="product-price">{{ tempProduct.price | currency:'USD' }}</div>                
+                <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to Cart</button>
+              </div>
+            </div>
+          </ng-container>
+          <div *ngIf="products?.length==0" class="alert alert-warning col-md-12" role="alert">
+            No products found.
+          </div>
+        </div>
+      </div>
+ 
+
+<!-- begin footer-->
+<div class="footer-pagination">
+  <div class="footer-pagination" style="display: flex; justify-content: center; align-items: center;">
+    <div style="margin-right: 20px;">
+      <span class="mr-2" style="margin-right: 5px;">Page Size</span>
+      <select #myPageSelect (change)="updatePageSize(myPageSelect.value)" style="color: black;">
+        <option>8</option>
+        <option select="true">16</option>
+        <option>28</option>
+        <option>52</option>
+      </select>
+    </div>
+    <div>
+      <ngb-pagination [(page)]="thePageNumber"
+                      [pageSize]="thePageSize"
+                      [collectionSize]="theTotalElements"
+                      [maxSize]="5"
+                      [boundaryLinks]="true"
+                      (pageChange)="listProducts()">
+      </ngb-pagination>
+    </div>
+  </div>
+</div>
+
+<!--end footer-->
+</div>
+</div>
+
